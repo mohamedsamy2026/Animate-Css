@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -7,11 +8,45 @@
 
     <title>Animate CSS</title>
 
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+
+    <style>
+        h1 {
+            color: white;
+            opacity: 1;
+            max-height: 100px;
+            background-color: red;
+            transition: all 1s ease-in-out;
+            display: block;
+        }
+
+        h1.hidden {
+            opacity: 0;
+            max-height: 0;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
 </head>
+
 <body style="background-color: rgb(6, 6, 95);">
+
     <!-- Learn Animate CSS -->
 
 
+    <h1 id="myTitle" class="animate__animated">Mohamed</h1>
+    <h2>Mohamed</h2>
 
+    <script>
+        const element = document.querySelector("h1");
+
+        element.classList.add("animate__headShake");
+
+        element.addEventListener("animationend", function () {
+            element.classList.add("hidden")
+        });
+    </script>
 </body>
+
 </html>
